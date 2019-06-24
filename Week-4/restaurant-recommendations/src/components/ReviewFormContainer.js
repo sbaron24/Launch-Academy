@@ -8,7 +8,7 @@ class ReviewFormContainer extends Component {
       name: '',
       rating: '',
       review: '',
-      restaurant_id: ''
+      restaurant_id: this.props.restaurant_id
     }
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleRatingChange = this.handleRatingChange.bind(this)
@@ -28,9 +28,12 @@ class ReviewFormContainer extends Component {
     this.setState({ review: event.target.value })
   }
 
+  // handleSubmit(event){
+  //   event.preventDefault()
+  //
+  // }
 
   render() {
-
     return (
       <div>
         <h4> New Review Form </h4>
@@ -54,6 +57,8 @@ class ReviewFormContainer extends Component {
           handleTextFieldChange={this.handleReviewChange}
           content={this.state.review}
         />
+
+        // <button type='submit' onSubmit={this.handleSubmit}>Submit!</button>
       </div>
     )
 

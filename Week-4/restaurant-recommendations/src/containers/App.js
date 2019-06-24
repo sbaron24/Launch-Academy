@@ -29,6 +29,11 @@ class App extends Component {
     )
   }
 
+  // trackNewRestaurant(newRestaurantObject){
+  //   let newRestaurantState = this.state.restaurants.concat(newRestaurantObject)
+  //   this.setState({ restaurants: newRestaurantState })
+  // }
+
   render() {
     let restaurantComponents = restaurants.map((restaurant) => {
       return (
@@ -53,7 +58,10 @@ class App extends Component {
           <div className="reviews small-9 columns">
             <h3>Reviews for {this.selectedRestaurant().name}</h3>
             <Reviews data={relevantReviews} />
-            <ReviewFormContainer />
+            <ReviewFormContainer
+              trackNewRestaurant={this.trackNewRestaurant}
+              restaurant_id={this.state.selectedId}
+            />
           </div>
         </div>
       </div>
