@@ -16,6 +16,7 @@ class App extends Component {
       selectedId: restaurants[0].id
     }
     this.restaurantClick = this.restaurantClick.bind(this)
+    this.trackNewReview = this.trackNewReview.bind(this)
   }
 
   restaurantClick(event) {
@@ -29,10 +30,10 @@ class App extends Component {
     )
   }
 
-  // trackNewRestaurant(newRestaurantObject){
-  //   let newRestaurantState = this.state.restaurants.concat(newRestaurantObject)
-  //   this.setState({ restaurants: newRestaurantState })
-  // }
+  trackNewReview(newReviewObject){
+    let newReviewsState = this.state.reviews.concat(newReviewObject)
+    this.setState({ reviews: newReviewsState })
+  }
 
   render() {
     let restaurantComponents = restaurants.map((restaurant) => {
@@ -59,7 +60,7 @@ class App extends Component {
             <h3>Reviews for {this.selectedRestaurant().name}</h3>
             <Reviews data={relevantReviews} />
             <ReviewFormContainer
-              trackNewRestaurant={this.trackNewRestaurant}
+              trackNewReview={this.trackNewReview}
               restaurant_id={this.state.selectedId}
             />
           </div>
