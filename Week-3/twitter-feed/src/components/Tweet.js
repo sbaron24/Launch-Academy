@@ -34,6 +34,9 @@ const Tweet = (props) => {
     return imageDiv
   }
 
+  // if (props.tweetData.entities.length != 0)
+  //   text.replace(display_url2, ".")
+
   return (
     <div className='row align-top'>
       <div className='columns small-1'>
