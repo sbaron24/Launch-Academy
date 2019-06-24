@@ -7,7 +7,8 @@ class ReviewFormContainer extends Component {
     this.state = {
       name: '',
       rating: '',
-      review: ''
+      review: '',
+      restaurant_id: ''
     }
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleRatingChange = this.handleRatingChange.bind(this)
@@ -16,7 +17,7 @@ class ReviewFormContainer extends Component {
   }
 
   handleNameChange(event){
-    this.setState({ name: event.target.value })
+    this.setState({ name: event.target.value, restaurant_id: event.target.value })
   }
 
   handleRatingChange(event){
@@ -32,6 +33,7 @@ class ReviewFormContainer extends Component {
 
     return (
       <div>
+        <h4> New Review Form </h4>
         <TextField
           label='Name:'
           name='name'
@@ -47,7 +49,7 @@ class ReviewFormContainer extends Component {
         />
 
         <TextField
-          label='Review Text:'
+          label='Review:'
           name='reviewText'
           handleTextFieldChange={this.handleReviewChange}
           content={this.state.review}
