@@ -21,3 +21,11 @@
   padding: 5px;
   margin: 5px;
 }
+
+button {
+  background-color: lightblue;
+  padding: 5px;
+  border-width: 1px;
+  border-color: grey;
+  border-radius: 3px;
+}
