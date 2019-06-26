@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class LauncherList extends Component {
   constructor(props){
@@ -9,14 +10,29 @@ class LauncherList extends Component {
   }
 
   componentDidMount(){
-    
+    fetch("/api/v1/launchers")
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`
+        error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then(response => response.json())
+    .then(launchers => {
+      this.setState({ launchers: launchers})
+    })
+    .catch(error => console.error(`Error in fetch ${error.message}`))
   }
 
   render(){
     let launcherList = this.state.launchers.map((launcher) => {
+
       return(
         <li key={launcher.id}>
-          {launcher.name}
+          <Link to={`/launchers/${launcher.id}`}>{launcher.name}</Link>
         </li>
       )
     })
@@ -26,6 +42,7 @@ class LauncherList extends Component {
         <ul>
           {launcherList}
         </ul>
+        <p></p>
       </div>
     )
   }
