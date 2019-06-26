@@ -1,0 +1,57 @@
+/* YOUR STYLING HERE */
+.page {
+  background-color: $light-blue;
+  padding-bottom: 10rem;
+
+  h1 {
+    text-align: center;
+    color: $blue;
+  }
+}
+
+.question-list {
+  padding: 1rem 10rem;
+  color: $grey
+}
+
+.unselected-question {
+  padding: 1rem 0;
+  border-bottom: solid 1px;
+
+  i {
+    padding: 0px 2rem;
+  }
+
+   h5 {
+     display: inline-block;
+   }
+}
+
+.selected-question {
+  padding: 1rem 0;
+
+  i {
+    padding: 0px 2rem;
+  }
+
+   h5 {
+     display: inline-block;
+   }
+}
+
+
+.green {
+  color: green;
+}
+
+.form-container {
+  margin: 1rem 10rem;
+  color: $grey;
+  border: dashed;
+  padding: 10px;
+  border-width: 2px;
+}
+
+.button {
+  background-color: #40c92f;
+}
